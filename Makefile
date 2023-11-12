@@ -10,6 +10,9 @@ ${BUILD}/boot/%.o: oskernel/boot/%.asm
 	$(shell mkdir -p ${BUILD}/boot)
 	nasm $< -o $@
 
+bochs:
+	bochs -q -f bochsrc
+
 clean:
 	$(shell rm -rf ${BUILD})
 
